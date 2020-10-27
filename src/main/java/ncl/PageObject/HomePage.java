@@ -11,6 +11,7 @@ import ncl.CommonAction.SelectionType;
 
 public class HomePage extends BasePage{
 
+	//WebElements
 	private String Destination_xPath = "//span[@class='e1_toggle_single' and text()='Destination']";
 	private String DestinationName_xpath = "//span[@class='e5_label' and text()='Australia & New Zealand Cruises']";
 	private String Apply_btn_xpath = "//div[@class='c22_menu_wrap']//a[@class='link-2' and text()='Apply']";
@@ -23,6 +24,7 @@ public class HomePage extends BasePage{
 
 
 
+	// Generating customize xPath for entering date.
 	public String calederDate_xpathBreake(String year, String months) {
 		String xPath=null;
 		String beforeYear = "//li[@data-year='";
@@ -32,6 +34,11 @@ public class HomePage extends BasePage{
 		return xPath;
 	}
 	
+	/**
+	 *  Generating customize xPath for entering Destination.
+	 * @param destinationName
+	 * @return
+	 */
 	public String DestinationName_xpathBreaker(String destinationName) {
 		String xPath = null;
 		String beforeDestination = "//span[@class='e5_label' and text()='";
@@ -40,6 +47,11 @@ public class HomePage extends BasePage{
 		return xPath;
 	}
 
+	/**
+	 * Select the destination using this function
+	 * @param destinationName
+	 * @throws InterruptedException
+	 */
 	public void searchDestination(String destinationName) throws InterruptedException {
 		try {
 			BrowserFunction.clickOn(Destination_xPath, SelectionType.elementType.Xpath);
@@ -51,6 +63,11 @@ public class HomePage extends BasePage{
 	}
 	
 
+	/**
+	 * Select the date from the calender using this function
+	 * @param year
+	 * @param months
+	 */
 	public void selectDate(String year, String months) {
 		try {
 			BrowserFunction.clickOn(date_xpath, SelectionType.elementType.Xpath);
@@ -63,6 +80,9 @@ public class HomePage extends BasePage{
 
 	}
 	
+	/**
+	 * Get the list of the total trip option with the price.
+	 */
 	public void getPriceFromList() {
 		List<WebElement> elements = driver.findElements(By.xpath(PricesList_xPath));
 	    System.out.println("Number of elements:" +elements.size());

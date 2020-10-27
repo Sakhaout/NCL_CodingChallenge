@@ -9,6 +9,14 @@ import ncl.BasePage.BasePage;
 
 public class BrowserFunction extends BasePage{
 
+	
+	/**
+	 * This function will return By WebElement
+	 * @param elementid
+	 * @param elementType
+	 * @return
+	 * @throws Exception
+	 */
 	public static By get_ByElement(String elementid, SelectionType.elementType elementType) throws Exception{
 		By element = null;
 		switch (elementType){
@@ -44,6 +52,13 @@ public class BrowserFunction extends BasePage{
 	
 	
 
+	/**
+	 * This function will return WebElement
+	 * @param elementid
+	 * @param elementType
+	 * @return
+	 * @throws Exception
+	 */
 	public static WebElement get_WebElements(String elementid, SelectionType.elementType elementType) throws Exception{
 		WebElement element = null;
 		switch (elementType){
@@ -77,7 +92,12 @@ public class BrowserFunction extends BasePage{
 		return element;
 	}
 	
-	
+	/**
+	 *
+	 * @param element
+	 * @param waitCondition
+	 * @return
+	 */
     public static WebElement explicitWait(By element, SelectionType.WaitCondition waitCondition){
         WebDriverWait wait = new WebDriverWait(driver, 30);
         WebElement elmt = null;
@@ -100,12 +120,25 @@ public class BrowserFunction extends BasePage{
         return elmt;
     }
     
+    /**
+     * 
+     * @param elementid
+     * @param elementType
+     * @throws Exception
+     */
     public static void clickOn(String elementid, SelectionType.elementType elementType) throws Exception{
         SelectionType.WaitCondition waitCondition = SelectionType.WaitCondition.ElementToBeClickable;
         WebElement element = explicitWait(get_ByElement(elementid, elementType),waitCondition);
         element.click();
     }
     
+    /**
+     * 
+     * @param elementid
+     * @param elementType
+     * @return
+     * @throws Exception
+     */
     public static String getText(String elementid, SelectionType.elementType elementType) throws Exception {
     	String text = null;
     	SelectionType.WaitCondition waitCondition = SelectionType.WaitCondition.ElementIsVisible;
@@ -114,6 +147,10 @@ public class BrowserFunction extends BasePage{
     	return text;
     }
     
+    /**
+     * 
+     * @return
+     */
     public static String getTitle() {
     	String title = null;
     	title = driver.getTitle();
