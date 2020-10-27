@@ -1,6 +1,9 @@
 package ncl.PageObject;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import ncl.BasePage.BasePage;
 import ncl.CommonAction.BrowserFunction;
@@ -16,9 +19,7 @@ public class HomePage extends BasePage{
 	private String ApplyDate_btn_xpath = "//div[@class='c22_menu -center-md-up']//a[@class='link-2' and text()='Apply']";
 	private String FindACruise_xpath = "//a[@class='btn btn-secondary btn-lg btn-short']";
 	private String ViewCruise_xpath = "//li[@class='favoritesList_item']//a[@aria-label='View Cruise']";
-	private String priceList_xPath = "//span[@class='headline-2 -variant-1']";
-	By datesPrices = By.xpath("//li[@class='c159_item' and @data-js='carousel-cell']");
-	By Apply_date_btn = By.xpath("/html/body/main/section[1]/div/div/form/div[2]/div/div[1]/div/div/div[2]/div/div/div/div[2]/div/div/div[3]/div/div/div[2]/ul/li[2]");
+	private String PricesList_xPath = "//li[@class='listing_item']//span[@class='headline-1 -variant-3']";
 
 
 
@@ -48,16 +49,27 @@ public class HomePage extends BasePage{
 			e.printStackTrace();
 		}
 	}
+	
 
 	public void selectDate(String year, String months) {
 		try {
 			BrowserFunction.clickOn(date_xpath, SelectionType.elementType.Xpath);
 			BrowserFunction.clickOn(calederDate_xpathBreake(year, months), SelectionType.elementType.Xpath);
 			BrowserFunction.clickOn(ApplyDate_btn_xpath, SelectionType.elementType.Xpath);
+			BrowserFunction.clickOn(FindACruise_xpath, SelectionType.elementType.Xpath);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
+	}
+	
+	public void getPriceFromList() {
+		List<WebElement> elements = driver.findElements(By.xpath(PricesList_xPath));
+	    System.out.println("Number of elements:" +elements.size());
+	    for (int i=0; i<elements.size();i++){
+	        System.out.println("Price List--> " + elements.get(i).getText());
+	      }
+		
 	}
 
 

@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="NCL Coding Challenge Test suite">
 
-	<test name="ncl.com testing on Chrome">
+	<test name="ncl.com testing on IE">
 		<parameter name="browser" value="IE"></parameter>
 		<classes>
 			<class name="testCases.HomePageTest" />

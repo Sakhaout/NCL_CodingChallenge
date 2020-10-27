@@ -1,11 +1,12 @@
 package testCases;
 
 import ncl.BasePage.BasePage;
+import ncl.CommonAction.BrowserFunction;
 import ncl.PageObject.HomePage;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 public class HomePageTest extends BasePage{
@@ -22,15 +23,19 @@ public class HomePageTest extends BasePage{
 	}
 
 	@Test
-	public void Test() {
+	public void VerifyWeAreInCruiseDetail() {
 		try {
 			homePageObj.searchDestination("Alaska Cruises");
 			homePageObj.selectDate("2021","April");
+			String expectedTitle = "Cruises to Alaska";
+			Assert.assertEquals(BrowserFunction.getTitle(), expectedTitle);
+			homePageObj.getPriceFromList();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
 	
 	@AfterClass
 	public void tearDown() {

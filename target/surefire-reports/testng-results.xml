@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-10-27T12:51:36 EDT" name="NCL Coding Challenge Test suite" finished-at="2020-10-27T12:51:58 EDT" duration-ms="22690">
+  <suite started-at="2020-10-27T14:20:40 EDT" name="NCL Coding Challenge Test suite" finished-at="2020-10-27T14:21:12 EDT" duration-ms="32472">
     <groups>
     </groups>
-    <test started-at="2020-10-27T12:51:36 EDT" name="ncl.com testing on Chrome" finished-at="2020-10-27T12:51:58 EDT" duration-ms="22690">
+    <test started-at="2020-10-27T14:20:40 EDT" name="ncl.com testing on IE" finished-at="2020-10-27T14:21:12 EDT" duration-ms="32472">
       <class name="testCases.HomePageTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testCases.HomePageTest@f79e]" started-at="2020-10-27T12:51:36 EDT" name="setUp" finished-at="2020-10-27T12:51:46 EDT" duration-ms="10731" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testCases.HomePageTest@13b6aecc]" started-at="2020-10-27T14:20:40 EDT" name="setUp" finished-at="2020-10-27T14:20:52 EDT" duration-ms="12048" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="Test()[pri:0, instance:testCases.HomePageTest@f79e]" started-at="2020-10-27T12:51:46 EDT" name="Test" finished-at="2020-10-27T12:51:58 EDT" duration-ms="11651" status="PASS">
+        <test-method signature="VerifyWeAreInCruiseDetail()[pri:0, instance:testCases.HomePageTest@13b6aecc]" started-at="2020-10-27T14:20:52 EDT" name="VerifyWeAreInCruiseDetail" finished-at="2020-10-27T14:21:11 EDT" duration-ms="19781" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.HomePageTest@f79e]" started-at="2020-10-27T12:51:58 EDT" name="tearDown" finished-at="2020-10-27T12:51:58 EDT" duration-ms="282" status="PASS">
+        </test-method> <!-- VerifyWeAreInCruiseDetail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.HomePageTest@13b6aecc]" started-at="2020-10-27T14:21:11 EDT" name="tearDown" finished-at="2020-10-27T14:21:12 EDT" duration-ms="625" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- testCases.HomePageTest -->
-    </test> <!-- ncl.com testing on Chrome -->
+    </test> <!-- ncl.com testing on IE -->
   </suite> <!-- NCL Coding Challenge Test suite -->
 </testng-results>

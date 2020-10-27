@@ -105,6 +105,20 @@ public class BrowserFunction extends BasePage{
         WebElement element = explicitWait(get_ByElement(elementid, elementType),waitCondition);
         element.click();
     }
+    
+    public static String getText(String elementid, SelectionType.elementType elementType) throws Exception {
+    	String text = null;
+    	SelectionType.WaitCondition waitCondition = SelectionType.WaitCondition.ElementIsVisible;
+    	WebElement element = explicitWait(get_ByElement(elementid, elementType),waitCondition);
+    	text = element.getText();
+    	return text;
+    }
+    
+    public static String getTitle() {
+    	String title = null;
+    	title = driver.getTitle();
+    	return title;
+    }
 	
 
 }
