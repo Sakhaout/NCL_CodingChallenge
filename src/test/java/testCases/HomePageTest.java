@@ -1,0 +1,40 @@
+package testCases;
+
+import ncl.BasePage.BasePage;
+import ncl.PageObject.HomePage;
+
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+public class HomePageTest extends BasePage{
+	private HomePage homePageObj = new HomePage();
+	
+	public HomePageTest() {
+		super();
+	}
+	
+	@Parameters({"browser"})
+	@BeforeClass
+	public void setUp(String browser){
+		initialition(browser);
+	}
+
+	@Test
+	public void Test() {
+		try {
+			homePageObj.searchDestination("Alaska Cruises");
+			homePageObj.selectDate("2021","April");
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@AfterClass
+	public void tearDown() {
+		driver.close();
+	}
+
+}

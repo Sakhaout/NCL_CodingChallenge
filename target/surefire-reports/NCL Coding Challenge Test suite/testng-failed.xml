@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [NCL Coding Challenge Test suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="ncl.com testing on Chrome(failed)" verbose="0">
+    <parameter name="browser" value="IE"/>
+    <classes>
+      <class name="testCases.HomePageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="Test"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- testCases.HomePageTest -->
+    </classes>
+  </test> <!-- ncl.com testing on Chrome(failed) -->
+</suite> <!-- Failed suite [NCL Coding Challenge Test suite] -->
