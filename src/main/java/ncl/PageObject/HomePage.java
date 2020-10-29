@@ -24,7 +24,7 @@ public class HomePage{
 	private String PriceAmount = null;
 
 	// Generating customize xPath for entering date.
-	public String calederDate_xpathBreake(String year, String months) {
+	private String calederDate_xpathBreake(String year, String months) {
 		String xPath=null;
 		String beforeYear = "//li[@data-year='";
 		String afterYear = "' and @data-value='";
@@ -38,7 +38,7 @@ public class HomePage{
 	 * @param destinationName
 	 * @return
 	 */
-	public String DestinationName_xpathBreaker(String destinationName) {
+	private String DestinationName_xpathBreaker(String destinationName) {
 		String xPath = null;
 		String beforeDestination = "//span[@class='e5_label' and text()='";
 		String afterDestination = "']";
