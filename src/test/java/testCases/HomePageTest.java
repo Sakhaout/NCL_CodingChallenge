@@ -1,7 +1,6 @@
 package testCases;
 
 import ncl.BasePage.BasePage;
-import ncl.CommonAction.BrowserFunction;
 import ncl.PageObject.HomePage;
 
 import org.testng.Assert;
@@ -27,9 +26,8 @@ public class HomePageTest extends BasePage{
 		try {
 			homePageObj.searchDestination("Alaska Cruises");
 			homePageObj.selectDate("2021","April");
-			String expectedTitle = "Cruises to Alaska";
-			Assert.assertEquals(BrowserFunction.getTitle(), expectedTitle);
-			homePageObj.getPriceFromList();
+			homePageObj.selectViewCruise();
+			Assert.assertTrue(homePageObj.AtLeastOneCategoryMetaPriceMatch());
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

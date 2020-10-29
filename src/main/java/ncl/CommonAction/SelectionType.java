@@ -16,7 +16,9 @@ public class SelectionType {
 		elementToBeSelected,
 		ElementIsVisible,
 		ElementToBeClickable,
-		visibilityOf
+		textToBePresentInElement,
+		visibilityOfElementLocated,
+		alertIsPresent
 	}
 
 }
