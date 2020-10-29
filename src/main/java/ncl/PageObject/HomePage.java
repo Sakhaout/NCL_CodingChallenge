@@ -19,7 +19,7 @@ public class HomePage{
 	private String FindACruise_xpath = "//a[@class='btn btn-secondary btn-lg btn-short']";
 	private String ViewCruise_xpath = "//a[@class='btn btn-secondary btn-lg' and @aria-label='View Cruise']";  //li[@class='listing_item']//a[@aria-label='View Cruise']";
 	private String PricesList_xPath = "//li[@class='listing_item']//span[@class='headline-1 -variant-3']";
-	private String DatePriceList_xPath = "//ul[@data-js='carousel-items']//a[@class='c165_link']"; //ul[@data-js='carousel-items']"; //"//ul[@data-js='carousel-items']//a[@class='c165_link']";
+	private String DatePriceList_xPath = "//span[@class='c164_header_pricing headline-6 -variant-5']"; //"//ul[@data-js='carousel-items']//a[@class='c165_link']";
 
 	private String PriceAmount = null;
 
@@ -135,12 +135,13 @@ public class HomePage{
 		List<WebElement> elements;
 		try {
 			elements = BrowserFunction.getWebElements(DatePriceList_xPath, SelectionType.elementType.Xpath);
+			System.out.println("Element size --> "+elements.size());
 			for(int i=0; i<elements.size();i++){
 				System.out.println("Price List--> "+elements.get(i).getText());
 				String price = elements.get(i).getText();
 				if(PriceAmount.equals(price)) {
 					return true;
-				}					
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
